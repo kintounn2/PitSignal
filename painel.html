@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#000000"><link rel="icon" type="image/png" href="logo.png"><title>PitSignal · Painel de corrida</title>
+<style>
+*{box-sizing:border-box}html{color-scheme:dark}body{margin:0;background:#000;color:white;font:14px Arial,sans-serif;font-variant-numeric:tabular-nums}main{max-width:1200px;margin:auto;padding:5px 8px 20px}.top{min-height:42px;height:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:11px;color:#bbb}.brand{display:flex;align-items:center;flex:0 0 auto}.brand img{display:block;width:150px;height:40px;object-fit:contain}.badge{color:#ffe600}.badge.live{color:#00ff61}.hidden{display:none!important}.banner{max-width:1000px;margin:6px auto;padding:8px;background:#302500;color:#ffde80;font-size:12px;border:1px solid #786000}.dash{--u:1vw;width:min(100%,calc((100dvh - 58px)*1.67));aspect-ratio:421/252;margin:0 auto;border:1px solid #aaa;display:grid;grid-template-rows:22% 44% 21% 13%;overflow:hidden}.dash-top{display:grid;grid-template-columns:repeat(3,1fr)}.cell{min-width:0;min-height:0;position:relative;display:flex;justify-content:center;align-items:center;border:1px solid #888;overflow:hidden}.label{position:absolute;top:1px;left:3px;font-size:calc(var(--u)*2);font-weight:bold;line-height:1;color:#bbb}.value{font-weight:750;line-height:1;font-size:calc(var(--u)*10);white-space:nowrap}.green{color:#00ff61}.red{color:#ff0020}.yellow{color:#ffff00}.dash-top .value{font-size:calc(var(--u)*9.4)}.dash-top .lapclock{font-size:calc(var(--u)*7.3)}.dash-top .label{font-size:calc(var(--u)*1.7);top:2px}.dash-top .value{padding-top:calc(var(--u)*2)}.middle{display:grid;grid-template-columns:23% 12.5% 27.5% 12.5% 24.5%;grid-template-rows:1fr 1fr}.speed .value{font-style:italic;font-size:calc(var(--u)*11)}.lap .value{font-size:calc(var(--u)*11)}.gear{grid-column:3;grid-row:1/3}.gear .value{font-size:calc(var(--u)*27)}.temp .value{font-size:calc(var(--u)*5.1);color:#ff0020}.temp .label{font-size:calc(var(--u)*1.7)}.bias .value{font-size:calc(var(--u)*10.8);font-style:italic}.limit{grid-column:5;grid-row:2;font-size:calc(var(--u)*5);font-weight:bold;white-space:nowrap;color:#555}.limit.active{background:#ff0020;color:white}.low{display:grid;grid-template-columns:23% 11% 32% 11% 23%}.low .value{font-size:calc(var(--u)*10)}.low .small .value{font-size:calc(var(--u)*7.5)}.low .clock .value{font-size:calc(var(--u)*6.2);align-self:flex-start;margin-top:calc(var(--u)*1.3)}.flag{font-weight:bold;font-size:calc(var(--u)*9);color:#555}.flag.active{background:#ffff00;color:#000}.pedals{display:grid;grid-template-columns:35% 65%;min-height:0}.pedal{position:relative;border:1px solid #aaa;overflow:hidden;background:#000}.pedal .fill{height:100%;width:0;transition:width .06s linear;background:#ff0020}.pedal.accel .fill{background:#00ff61}.pedal:after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(to right,transparent 0,transparent calc(var(--u)*4.5 - 1px),#999 calc(var(--u)*4.5 - 1px),#999 calc(var(--u)*4.5));pointer-events:none}.pedal span{position:absolute;top:1px;left:3px;font-size:calc(var(--u)*1.7);font-weight:bold;color:white;z-index:1}footer{max-width:1000px;margin:5px auto;display:flex;justify-content:space-between;font-size:10px;color:#888;gap:8px}.controls{max-width:1000px;margin:10px auto;border:1px solid #444;padding:10px;background:#101010}.controls>summary{cursor:pointer;color:#ddd;font-size:13px;font-weight:bold}.actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}button{font:inherit;padding:9px 12px;color:#fff;border:1px solid #666;background:#202020;border-radius:3px;cursor:pointer}button:focus-visible{outline:2px solid #00ff61}button:disabled{opacity:.5;cursor:wait}.sub,.note{font-size:12px;color:#aaa}.radio-status{color:#00ff61;font-size:13px}.radio-error,.warn{color:#ffb66b}.radio-last{font-size:14px}.extras{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}.extra{border:1px solid #444;padding:12px}.extra strong{display:block;font-size:24px;margin-top:6px}.extra .label{position:static;font:12px Arial,sans-serif}.tyre-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.tyre{padding:8px;border:1px solid #444}.tyre strong{display:block;font-size:22px;margin-top:6px}.tyre small{display:block;color:#aaa;margin-top:4px}.bar{height:4px;background:#333;margin:5px 0}.bar .fill{height:100%;background:#00ff61;width:0}.alerts{padding-left:20px;font-size:13px}.wake-note{font-size:12px;color:#ffcc80}.offline .dash{opacity:.4}@media(max-width:540px){.extras{grid-template-columns:1fr 1fr}.top{font-size:9px}.tyre{padding:5px}.tyre strong{font-size:18px}button{font-size:12px}.dash{width:100%}footer{font-size:9px}}
+
+.top{height:auto;min-height:32px}.top>button{padding:4px 8px;font-size:11px;white-space:nowrap}dialog{color:#eee;background:#0c1017;border:1px solid #4d596d;border-radius:12px;width:min(820px,96vw);max-height:92dvh;padding:0;overflow:auto;overscroll-behavior:contain}dialog::backdrop{background:#000b}.settings-shell{padding:18px}.settings-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.settings-top h2{margin:0;font-size:23px}.settings-top p,.settings-help{font-size:13px;line-height:1.5;color:#b9c2d1}.settings-help{padding:10px;background:#151e2c;border-radius:6px}.settings-group h3{font-size:16px;color:#9cf56f;margin:20px 0 9px}.settings-row{border:1px solid #354153;border-radius:8px;padding:12px;margin:8px 0;background:#111a27}.settings-row-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.settings-row-top>label:first-child{font-size:14px}.switch{position:relative;display:inline-block;flex:0 0 48px;height:28px}.switch input{position:absolute;inset:0;margin:0;width:100%;height:100%;opacity:0;z-index:2;cursor:pointer}.switch-track{position:absolute;inset:0;border-radius:20px;background:#465164;pointer-events:none}.switch-track:after{content:'';position:absolute;width:20px;height:20px;border-radius:50%;top:4px;left:4px;background:white;transition:transform .15s}.switch input:checked+.switch-track{background:#379d45}.switch input:checked+.switch-track:after{transform:translateX(20px)}.switch input:focus-visible+.switch-track{outline:2px solid #baff91;outline-offset:3px}.settings-row input[type=range]{width:100%;margin:18px 0 8px;accent-color:#9cf56f;height:26px;cursor:pointer}.range-caption{font-size:12px;color:#afc0d8;display:block}.settings-bottom{position:sticky;bottom:0;background:#0c1017;padding:12px 0 0;border-top:1px solid #354153;font-size:13px}.settings-bottom .actions{margin-bottom:0}#settingssave{background:#29632e;border-color:#8ce074}@media(max-width:540px){.settings-shell{padding:12px}.settings-top h2{font-size:19px}.top .brand{letter-spacing:0}.top{gap:5px}.top>button{font-size:9px}}
+.summary-neighbors{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}.summary-neighbors section{background:#152031;border:1px solid #475870;border-radius:8px;padding:15px}.summary-neighbors span{font-size:11px;color:#a8b7cd}.summary-neighbors strong{display:block;font-size:35px;color:#00ff61;margin:12px 0}.summary-neighbors small{color:#bbb}.summary-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}.summary-metrics>div{padding:12px;background:#141c29;border:1px solid #354153;border-radius:6px}.summary-metrics span{font-size:12px;color:#a8b7cd}.summary-metrics strong{display:block;margin-top:8px;font-size:21px}.summary-damage{font-size:14px;line-height:1.7}@media(max-width:540px){.summary-neighbors{gap:8px}.summary-neighbors section{padding:10px}.summary-neighbors strong{font-size:25px}.summary-metrics strong{font-size:18px}.top{flex-wrap:wrap}}
+.temp{flex-direction:column;padding-top:calc(var(--u)*1.5);gap:calc(var(--u)*.7)}.temp .value{font-size:calc(var(--u)*4.4);color:#fff}.temp .label{font-size:calc(var(--u)*1.5)}.heat-dot{display:block;width:calc(var(--u)*2.5);height:calc(var(--u)*2.5);border-radius:50%;background:#555;border:1px solid #aaa;flex-shrink:0}.heat-dot.cold{background:#2099ff}.heat-dot.ideal{background:#00ff61}.heat-dot.hot{background:#ff0020}.heat-dot.unknown{background:#555}.main-feedback{font-size:11px;color:#baff91;margin:4px 0;min-height:0}.main-feedback:empty{display:none}
+.gear{flex-direction:column;justify-content:flex-start;padding-top:calc(var(--u)*2)}.gear .value{font-size:calc(var(--u)*16.5);line-height:1}.gear-speed{width:100%;margin-top:auto;border-top:1px solid #888;text-align:center;font-size:calc(var(--u)*6.5);font-weight:bold;line-height:1.05;padding:calc(var(--u)*.5) 0}.gear-speed small{font-size:calc(var(--u)*2.2);font-weight:normal}.drs-cell{color:#555}.drs-text{font-size:calc(var(--u)*8);font-weight:bold}.drs-cell.active,.ers-marker.active{background:#083d16;color:#00ff61}.low .ers-marker .value{font-size:calc(var(--u)*4.8)}.ers-marker{color:#555}.ers-marker .label{font-size:calc(var(--u)*1.4)}
+.gear{padding-top:calc(var(--u)*6)}.gear .value{font-size:calc(var(--u)*13)}.gear>.label{top:calc(var(--u)*4.5);left:50%;transform:translateX(-50%)}.gear-indicators{position:absolute;top:calc(var(--u)*.6);left:calc(var(--u)*1.2);right:calc(var(--u)*1.2);display:flex;justify-content:space-between}.gear-indicators>div{display:flex;align-items:center;flex-direction:column;gap:calc(var(--u)*.4)}.gear-indicators small{font-size:calc(var(--u)*1.8);color:#fff;font-weight:bold}.activation-dot{display:block;width:calc(var(--u)*2.5);height:calc(var(--u)*2.5);border-radius:50%;background:#444;border:1px solid #999}.activation-dot.active{background:#bd55ff}
+.fuel-cell .value{font-size:calc(var(--u)*8)}.fuel-cell .label{font-size:calc(var(--u)*1.8)}.gear-charge{width:88%;height:calc(var(--u)*1.6);flex-shrink:0;border:1px solid #888;background:#222;margin-top:auto;margin-bottom:calc(var(--u)*.5)}.gear-charge>div{height:100%;width:0;background:#bd55ff}.gear-speed{margin-top:0}.gear .value{font-size:calc(var(--u)*11.5)}.track-flag{flex-direction:column;gap:calc(var(--u)*.5);font-weight:bold;font-size:calc(var(--u)*4.5);padding-top:calc(var(--u)*2)}.flag-icon{width:calc(var(--u)*7);height:calc(var(--u)*3);background:#00ff61}
+@keyframes bestLapFlash{0%,49%{background:#7e22ce}50%,100%{background:#000}}.best-flash{animation:bestLapFlash .7s linear 5}.rpm-track{width:88%;height:calc(var(--u)*5);background:#222;border:1px solid #888;position:relative;margin-top:calc(var(--u)*2)}.rpm-track>div{height:100%;width:0}.rpm-track:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(to right,transparent 0,transparent 9%,#000 9%,#000 10%);pointer-events:none}.rpm-track{width:100%;height:7px;margin:0;border:0;position:relative}.rpm-track:after{background:repeating-linear-gradient(to right,transparent 0,transparent 4.8%,#000 4.8%,#000 5%)}.dash{width:min(100%,calc((100dvh - 65px)*1.67))}@keyframes drsAvailableBlink{0%,49%{background:#ff0020}50%,100%{background:#444}}.activation-dot.available{animation:drsAvailableBlink .8s linear infinite}.track-flag{padding:0}@keyframes specialFlagBlink{0%,49%{background:var(--flag-color)}50%,100%{background:#000}}.track-flag.flag-flash{animation:specialFlagBlink .8s linear infinite}.dash{grid-template-rows:22% 55% 23%}.gear-speed{font-size:calc(var(--u)*6);padding-bottom:calc(var(--u)*.5)}.gear-speed .pedals{display:flex;width:90%;height:calc(var(--u)*1.2);min-height:3px;margin:calc(var(--u)*.6) auto 0;border:1px solid #888}.gear-speed .pedal{width:50%;height:100%;border:0;background:#222}.gear-speed .pedal:first-child{display:flex;justify-content:flex-end;border-right:1px solid #fff}.gear-speed .pedal:after,.gear-speed .pedal span{display:none}.gear-speed .pedal .fill{height:100%}
+.connect-network{display:block;width:100%;padding:10px;margin:8px 0;background:#202938;color:white;border:1px solid #62728b;border-radius:6px}.connect-code{text-align:center;margin:16px 0}.connect-code img{width:min(328px,100%);height:auto;background:white;padding:0;border:8px solid white;border-radius:4px}.connect-link{display:block;word-break:break-all;color:#9cf56f;font-size:14px}.language-picker{font-size:11px;color:#ccc;white-space:nowrap}.language-picker select{background:#151515;color:#fff;border:1px solid #666;border-radius:4px;padding:4px;font:inherit}.top{flex-wrap:wrap}</style></head><body><div class="rpm-track" id="rpmtrack" role="img" aria-label="RPM indisponível"><div id="rpmbar"></div></div><main>
+<div class="top"><span class="brand"><img src="logo.png" alt="PitSignal" width="150" height="40"></span><span id="connection" class="badge" role="status">Conectando ao painel</span><label class="language-picker">Idioma / Language <select id="languagepick" aria-label="Idioma / Language"><option value="pt">Português</option><option value="en">English</option></select></label><button id="connectopen" type="button">Conectar celular · QR</button><button id="summaryspeak" type="button">Ouvir resumo</button><button id="summaryopen" type="button">Resumo</button><button id="settingsopen" type="button">Configurar avisos</button></div>
+<div id="demo" class="banner hidden">DEMONSTRAÇÃO · Dano aos 12 s, aumento aos 24 s e voltas aceleradas a cada 20 s.</div><div id="notice" class="banner">Conectando ao PC…</div>
+<p id="mainfeedback" class="main-feedback" role="status"></p>
+<section class="dash" id="dashboard" aria-label="Painel de corrida">
+<div class="dash-top"><div class="cell"><span class="label">VOLTA ATUAL</span><span class="value green lapclock" id="current">—</span></div><div class="cell"><span class="label">MELHOR DA CORRIDA</span><span class="value lapclock" id="personalbest" style="color:#bd55ff">—</span><span class="hidden" id="rpm">—</span></div><div class="cell"><span class="label">Δ LÍDER</span><span class="value green" id="delta">—</span></div></div>
+<div class="middle"><div class="cell fuel-cell" id="fuelmarker"><span class="label">COMBUSTÍVEL %</span><span class="value" id="fuelpercent">—</span></div><div class="cell temp"><span class="label">TE · DESG.</span><span class="value" id="dashte">—</span><span class="heat-dot" id="heatte" role="img" aria-label="Temperatura indisponível"></span></div><div class="cell gear"><div class="gear-indicators"><div><span class="activation-dot" id="ersdot" role="img" aria-label="ERS inativo"></span><small>ERS</small></div><div><span class="activation-dot" id="drsdot" role="img" aria-label="DRS inativo"></span><small>DRS</small></div></div><span class="label">GEAR</span><span class="value" id="gear">—</span><div class="gear-charge" aria-label="Carga do ERS"><div id="gearchargefill"></div></div><div class="gear-speed"><span id="speed">—</span><small> km/h</small><div class="pedals"><div class="pedal"><span>FREIO</span><div class="fill" id="brakebar"></div></div><div class="pedal accel"><span>ACELERADOR</span><div class="fill" id="throttlebar"></div></div></div></div></div><div class="cell temp"><span class="label">TD · DESG.</span><span class="value" id="dashtd">—</span><span class="heat-dot" id="heattd" role="img" aria-label="Temperatura indisponível"></span></div><div class="cell bias"><span class="label">BBAL %</span><span class="value" id="brakebias">—</span></div><div class="cell lap"><span class="label">LAP</span><span class="value" id="dashlap">—</span></div><div class="cell temp"><span class="label">DE · DESG.</span><span class="value" id="dashde">—</span><span class="heat-dot" id="heatde" role="img" aria-label="Temperatura indisponível"></span></div><div class="cell temp"><span class="label">DD · DESG.</span><span class="value" id="dashdd">—</span><span class="heat-dot" id="heatdd" role="img" aria-label="Temperatura indisponível"></span></div><div class="cell limit" id="pitlimiter">PIT LIMIT</div></div>
+<div class="low"><div class="cell track-flag" id="trackflagpanel" role="img" aria-label="Bandeira verde"><span class="flag-icon hidden" id="trackflagicon"></span><span class="hidden" id="trackflagtext">VERDE</span><span class="hidden" id="soc">—</span></div><div class="cell small"><span class="label">MIX</span><span class="value" id="mix">—</span></div><div class="cell clock"><span class="value yellow" id="sessionclock">—</span></div><div class="cell small ers-marker" id="ersmarker"><span class="label">ERS EM USO</span><span class="value" id="deploy">OFF</span></div><div class="cell flag" id="safetycell">VSC</div></div>
+</section>
+<footer><span id="sessionstate">Aguardando telemetria</span><span id="updated">Sem atualização</span></footer>
+<details class="controls"><summary>Rádio, combustível e controles</summary>
+<div class="actions"><button id="radiotest">Testar rádio no PC</button><button id="radiotoggle" aria-pressed="true">Pausar avisos</button><button id="fullscreen">Tela cheia</button><button id="keepawake" aria-pressed="false">Manter tela ligada</button></div><div id="wakenote" class="wake-note hidden" role="status"></div>
+<span class="radio-status" id="radiostatus" role="status">Conectando ao rádio…</span><p class="radio-last" id="radiolast">Clique em Testar rádio para conferir seu fone.</p><p id="radiofeedback" class="note" role="status"></p><p class="sub">O som sai pelo PC. Danos seguem os intervalos configurados. Ajuste o narrador e a frequência dos resumos em Configurar avisos.</p>
+<div class="extras"><div class="extra"><span class="label">Combustível</span><strong><span id="fuel">—</span> kg</strong></div><div class="extra"><span class="label">Margem do MFD</span><strong id="margin">—</strong><span class="sub">voltas · previsão do jogo</span></div><div class="extra"><span class="label">ERS armazenado</span><strong id="ers">—</strong><div class="bar"><div class="fill" id="ersbar"></div></div></div><div class="extra"><span class="label">Posição</span><strong id="position">—</strong></div><div class="extra"><span class="label">Voltas</span><strong id="lap">—</strong></div><div class="extra"><span class="label">Volta anterior</span><strong id="previous">—</strong></div><div class="extra"><span class="label">Boxes · ideal / limite do jogo</span><strong><span id="pitideal">—</span> / <span id="pitlatest">—</span></strong></div><div class="extra"><span class="label">Pedais</span><strong><span id="throttle">—</span> / <span id="brake">—</span></strong></div></div>
+<p><span id="compound">—</span> · <span id="tyreage">Idade dos pneus: —</span></p><div class="tyre-grid" id="tyres"></div><ul class="alerts" id="alerts"></ul><p class="note">BBAL: balanço dos freios. ERS %: carga da bateria. MIX e ERS: modos do jogo. Quatro percentuais de desgaste; os círculos indicam a temperatura interna na faixa configurada. PIT LIMIT e VSC só são destacados quando ativos. Δ LÍDER: diferença para o líder em segundos. Relógio: tempo restante da sessão.</p><p class="note">Protótipo por regras, sem cálculo próprio de estratégia. Use o tablet na horizontal para o visual da referência.</p>
+</details><p class="note" style="text-align:center">Desenvolvido por Kintounn · PitSignal</p></main>
+<dialog id="connectdialog" aria-labelledby="connecttitle"><div class="settings-shell"><div class="settings-top"><div><h2 id="connecttitle">Abrir no celular ou tablet</h2><p>Aponte a câmera para o QR Code.</p></div><button id="connectclose" type="button">Fechar</button></div><p class="settings-help">Conecte o celular/tablet ao mesmo Wi-Fi ou à mesma rede do PC. Mantenha o programa aberto no computador.</p><label for="connectnetwork">Endereço do PC na rede</label><select id="connectnetwork" class="connect-network"></select><div class="connect-code"><img id="connectqr" width="328" height="328" alt="QR Code para abrir o dashboard no celular" hidden></div><p id="connectfeedback" class="settings-help" role="status">Carregando…</p><a id="connectlink" class="connect-link" target="_blank" rel="noopener"></a><p class="note">Se houver vários endereços e um deles não abrir, escolha outro acima. Caso o Windows pergunte, permita o Python em redes privadas.</p></div></dialog>
+
+<dialog id="summarydialog" aria-labelledby="summarytitle"><div class="settings-shell"><div class="settings-top"><div><h2 id="summarytitle">Situação do carro e da corrida</h2><p id="summarylive">Aguardando telemetria</p></div><button id="summaryclose" type="button">Fechar</button></div><div class="summary-neighbors"><section><span>PILOTO À FRENTE</span><strong id="summaryahead">—</strong><small id="summaryaheadpos">—</small></section><section><span>PILOTO ATRÁS</span><strong id="summarybehind">—</strong><small id="summarybehindpos">—</small></section></div><p class="settings-help">Intervalos em segundos para os pilotos imediatamente à frente e atrás na classificação. Campos sem dados recentes são ocultados.</p><div class="summary-metrics"><div><span>Sua posição</span><strong id="summaryposition">—</strong></div><div><span>Volta / total</span><strong id="summarylap">—</strong></div><div><span>Combustível no tanque</span><strong id="summaryfuel">—</strong></div><div><span>Margem de combustível do jogo</span><strong id="summarymargin">—</strong></div><div><span>Maior desgaste de pneu</span><strong id="summarywear">—</strong></div><div><span>Energia ERS</span><strong id="summaryers">—</strong></div><div><span>Parada prevista pelo jogo</span><strong id="summarypit">—</strong></div><div><span>Volta anterior</span><strong id="summarylast">—</strong></div></div><h3>Danos e falhas</h3><ul id="summarydamage" class="summary-damage"></ul></div></dialog>
+
+<dialog id="settingsdialog" aria-labelledby="settingstitle"><div class="settings-shell"><div class="settings-top"><div><h2 id="settingstitle">Configuração de avisos</h2><p>Escolha o que o narrador fala e com qual frequência.</p></div><button id="settingsclose" type="button">Fechar</button></div><p class="settings-help">Dano e desgaste são separados. Os controles usam marcos percentuais: com 10, avisa ao atingir 10%, 20%, 30%… Não repete a cada 1%. Falhas de DRS/ERS são liga/desliga. As cores dos pneus usam temperatura interna: azul = frio, verde = faixa configurada, vermelho = quente. Ajuste os limites por composto abaixo; são referências, não um limite universal de desempenho ideal.</p><p class="settings-help">Em Narrador, ative as falas e escolha resumos a cada 1 a 20 voltas. Exemplo: a cada 2 voltas, anuncia ao concluir as voltas 2, 4, 6… O resumo final também é anunciado.</p><div id="settingsform"></div><div class="settings-bottom"><span id="settingsfeedback" role="status">Carregando…</span><div class="actions"><button id="settingsdefaults" type="button">Restaurar padrão</button><button id="settingssave" type="button">Salvar configurações</button></div></div></div></dialog>
+
+<script>
+const $=id=>document.getElementById(id), present=v=>v!==undefined&&v!==null&&Number.isFinite(v), num=(v,n=0)=>present(v)?v.toLocaleString('pt-BR',{minimumFractionDigits:n,maximumFractionDigits:n}):'—';
+const APP_LANGUAGE='__APP_LANGUAGE__';
+$('languagepick').value=APP_LANGUAGE;
+$('languagepick').addEventListener('change',async()=>{
+ const selected=$('languagepick').value;$('languagepick').disabled=true;
+ try{const response=await settingsFetch('language',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({language:selected})});if(!response.ok)throw Error();location.href=location.pathname;}
+ catch(e){$('mainfeedback').textContent='Não foi possível alterar o idioma. Confira a conexão.';$('languagepick').value=APP_LANGUAGE;$('languagepick').disabled=false;}
+});
+$('summaryopen').addEventListener('click',()=>{const dialog=$('summarydialog');if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');});
+$('summaryclose').addEventListener('click',()=>{const dialog=$('summarydialog');if(dialog.close)dialog.close();else dialog.removeAttribute('open');});
+function updateSummary(d){
+ const lap=d.lap||{},s=d.session||{},st=d.status||{},damage=d.damage||{};
+ $('summarylive').textContent=d.connected?(d.demo?'Demonstração · dados simulados':'Atualização ao vivo'):'Sem telemetria recente';
+ for(const [side,key] of [['ahead','ahead'],['behind','behind']]){
+  const other=d.race?lap[key]:null;
+  $('summary'+side).textContent=other&&present(other.gap)?num(other.gap,3)+' s':'—';
+  $('summary'+side+'pos').textContent=other?'Posição '+other.position:side==='ahead'&&lap.position===1?'Você está na liderança':'Sem piloto ou intervalo disponível';
+ }
+ $('summaryposition').textContent=present(lap.position)&&lap.position>0?'P'+lap.position:'—';
+ $('summarylap').textContent=num(lap.lap)+' / '+num(s.total);
+ $('summaryfuel').textContent=present(st.fuel)?num(st.fuel,2)+' kg':'—';
+ $('summarymargin').textContent=present(st.margin)?(st.margin>=0?'+':'')+num(st.margin,2)+' voltas':'—';
+ $('summarywear').textContent=damage.wear?.length?num(Math.max(...damage.wear),1)+'%':'—';
+ $('summaryers').textContent=present(st.ers)?num(st.ers)+'%':'—';
+ $('summarypit').textContent=d.race&&s.ideal?'Volta '+s.ideal:'—';$('summarylast').textContent=time(lap.last);
+ const entries=Object.entries(damage.parts||{}).filter(([name,v])=>v>0).map(([name,v])=>name+': '+num(v)+'%');
+ entries.push(...Object.entries(damage.faults||{}).filter(([name,v])=>v).map(([name])=>'Falha: '+name));
+ if(!entries.length)entries.push(Object.keys(damage).length?'Nenhum dano ou falha informado.':'Aguardando dados de danos.');
+ $('summarydamage').replaceChildren(...entries.map(text=>{const li=document.createElement('li');li.textContent=text;return li;}));
+}
+let settingsDraft=null,settingsDefaults=null,settingsDefinitions=[],settingsDirty=false;
+function percentDescription(n){const marks=[n,n*2,n*3].filter(v=>v<=100).map(v=>v+'%').join(', ');return 'A cada '+n+(n===1?' ponto percentual':' pontos percentuais')+' · '+marks+(n*4<=100?'…':'');}
+function renderSettings(){
+ const form=$('settingsform');form.replaceChildren();let group='';let section;
+ for(const def of settingsDefinitions){
+  if(group!==def.group){group=def.group;section=document.createElement('section');section.className='settings-group';const h=document.createElement('h3');h.textContent=group;section.append(h);form.append(section);}
+  const row=document.createElement('div');row.className='settings-row';
+  const top=document.createElement('div');top.className='settings-row-top';
+  const label=document.createElement('label');label.htmlFor='setting-'+def.id;label.textContent=def.label;
+  const wrap=document.createElement('label');wrap.className='switch';
+  const toggle=document.createElement('input');toggle.type='checkbox';toggle.id='setting-'+def.id;toggle.setAttribute('role','switch');toggle.setAttribute('aria-label',def.label);toggle.checked=settingsDraft[def.id].enabled;
+  const track=document.createElement('span');track.className='switch-track';wrap.append(toggle,track);top.append(label,wrap);row.append(top);
+  let slider;
+  toggle.addEventListener('change',()=>{settingsDraft[def.id].enabled=toggle.checked;if(slider)slider.disabled=!toggle.checked;settingsDirty=true;$('settingsfeedback').textContent='Alterações ainda não salvas.';});
+  if(def.percent||def.interval){
+   const caption=document.createElement('label');caption.htmlFor='range-'+def.id;caption.className='range-caption';
+   slider=document.createElement('input');slider.id='range-'+def.id;slider.type='range';slider.min='1';slider.max=def.percent?'100':'20';slider.step='1';slider.value=settingsDraft[def.id].step;slider.disabled=!toggle.checked;
+   slider.setAttribute('aria-label',def.interval?'Intervalo dos resumos em voltas':'Intervalo percentual: '+def.label);
+   const update=()=>{const n=Number(slider.value);caption.textContent=def.interval?'Anunciar a cada '+n+' volta'+(n===1?'':'s'):percentDescription(n);slider.setAttribute('aria-valuetext',caption.textContent);};update();
+   slider.addEventListener('input',()=>{settingsDraft[def.id].step=Number(slider.value);update();settingsDirty=true;$('settingsfeedback').textContent='Alterações ainda não salvas.';});row.append(slider,caption);
+  }
+  if(def.thermal){
+   for(const [field,title] of [['low','Abaixo deste valor: frio'],['high','Acima deste valor: quente']]){
+    const caption=document.createElement('label');caption.htmlFor='range-'+def.id+'-'+field;caption.className='range-caption';
+    const range=document.createElement('input');range.type='range';range.id=caption.htmlFor;range.min='1';range.max='150';range.step='1';range.value=settingsDraft[def.id][field];range.disabled=!toggle.checked;
+    range.setAttribute('aria-label',def.label+' · '+title);
+    const update=()=>{caption.textContent=title+' · '+range.value+' °C';range.setAttribute('aria-valuetext',caption.textContent);};update();
+    range.addEventListener('input',()=>{settingsDraft[def.id][field]=Number(range.value);update();settingsDirty=true;$('settingsfeedback').textContent='Alterações ainda não salvas.';});
+    toggle.addEventListener('change',()=>{range.disabled=!toggle.checked;});row.append(range,caption);
+   }
+  }
+  section.append(row);
+ }
+}
+async function settingsFetch(url,options={}){const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),4000);try{return await fetch(url,{...options,signal:controller.signal});}finally{clearTimeout(timer);}}
+async function openSettings(){
+ const dialog=$('settingsdialog');if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');
+ $('settingsfeedback').textContent='Carregando configurações do PC…';$('settingssave').disabled=true;$('settingsdefaults').disabled=true;
+ try{const result=await settingsFetch('settings',{cache:'no-store'});if(!result.ok)throw Error();const model=await result.json();settingsDraft=model.settings;settingsDefaults=model.defaults;settingsDefinitions=model.definitions;settingsDirty=false;renderSettings();$('settingsfeedback').textContent=model.warning||'Configurações salvas no PC. Ajuste e toque em Salvar.';$('settingssave').disabled=false;$('settingsdefaults').disabled=false;}
+ catch(e){$('settingsfeedback').textContent='Não foi possível carregar. Confira a conexão e reabra esta tela.';}
+}
+$('settingsopen').addEventListener('click',openSettings);
+$('settingsclose').addEventListener('click',()=>{const dialog=$('settingsdialog');if(dialog.close)dialog.close();else dialog.removeAttribute('open');});
+$('settingsdefaults').addEventListener('click',()=>{settingsDraft=JSON.parse(JSON.stringify(settingsDefaults));settingsDirty=true;renderSettings();$('settingsfeedback').textContent='Padrões carregados: intervalos de 10 pontos e resumo a cada volta. Toque em Salvar.';});
+$('settingssave').addEventListener('click',async()=>{
+ if(!settingsDraft)return;
+ for(const def of settingsDefinitions){if(def.thermal&&settingsDraft[def.id].low>=settingsDraft[def.id].high){$('settingsfeedback').textContent=def.label+': o limite frio deve ser menor que o limite quente.';return;}}
+ $('settingssave').disabled=true;$('settingsfeedback').textContent='Salvando no PC…';
+ try{const response=await settingsFetch('settings',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({settings:settingsDraft})});if(!response.ok)throw Error();const result=await response.json();settingsDirty=false;$('settingsfeedback').textContent=result.message;}
+ catch(e){$('settingsfeedback').textContent='Não foi possível salvar. Confira a conexão e tente novamente.';}
+ finally{$('settingssave').disabled=false;}
+});
+
+const pct=v=>present(v)?Math.min(100,Math.max(0,v)):0;
+const time=ms=>ms?Math.floor(ms/60000)+':'+((ms%60000)/1000).toFixed(3).padStart(6,'0'):'—';
+const tyres=[['TE','Traseiro esquerdo'],['TD','Traseiro direito'],['DE','Dianteiro esquerdo'],['DD','Dianteiro direito']];
+for(const [i,[name,full]] of tyres.entries()){
+ const box=document.createElement('div');box.className='tyre';box.title=full;
+ box.innerHTML=`<span class="name">${name}</span><strong id="wear${i}">—</strong><div class="bar"><div class="fill" id="wearbar${i}"></div></div><small id="temp${i}">— °C</small>`;$('tyres').append(box);
+}
+let seenBestEvent=null;
+function show(d){
+ if(d.language&&d.language!==APP_LANGUAGE&&typeof location!=='undefined'){location.reload();return;}
+ const s=d.session||{},l=d.lap||{},c=d.car||{},st=d.status||{},dm=d.damage||{};
+ const event=String(d.session_uid)+'/'+(l.best_event||0);if(seenBestEvent!==null&&seenBestEvent!==event&&l.best_event&&d.connected){const cell=$('current').parentElement;if(cell){cell.classList.remove('best-flash');void cell.offsetWidth;cell.classList.add('best-flash');}}if(d.connected)seenBestEvent=event;
+ $('demo').classList.toggle('hidden',!d.demo);
+ $('connection').textContent=d.connected?(d.demo?'Demonstração ativa':'Telemetria ao vivo'):'Aguardando jogo';
+ $('connection').className='badge '+(d.connected?'live':'wait');
+ $('notice').classList.toggle('hidden',!!d.connected);
+ $('notice').textContent='Painel conectado ao PC. Entre na pista e confira a telemetria UDP do F1 24.';
+ document.body.classList.remove('offline');
+ $('lap').textContent=num(l.lap)+' / '+num(s.total);
+ $('position').textContent=present(l.position)?'P'+l.position:'—';
+ $('sessionstate').textContent=d.connected?(l.pit?'Nos boxes':'Na pista · '+(d.demo?'simulação':'dados do jogo')):'Aguardando telemetria';
+ $('speed').textContent=num(c.speed);$('gear').textContent=c.gear===-1?'R':c.gear===0?'N':num(c.gear);$('personalbest').textContent=time(l.best_lap_ms);$('rpm').textContent=num(c.rpm);const ratio=(c.rev_lights_pct||0)/100;$('rpmbar').style.width=pct(ratio*100)+'%';$('rpmbar').style.background=ratio>=.95?'#ff0020':ratio>=.85?'#ffff00':'#00ff61';$('rpmtrack').setAttribute('aria-label',present(c.rpm)?c.rpm+' RPM':'RPM indisponível');
+ for(const p of ['throttle','brake']){$(p).textContent=present(c[p])?num(c[p]*100)+'%':'—';$(p+'bar').style.width=pct(c[p]*100)+'%';}
+ $('fuel').textContent=num(st.fuel,2);$('margin').textContent=present(st.margin)?(st.margin>=0?'+':'')+num(st.margin,2):'—';
+ $('margin').className='number '+(st.margin<0?'warn':'accent');$('ers').textContent=present(st.ers)?num(st.ers)+'%':'—';$('ersbar').style.width=pct(st.ers)+'%';
+ $('current').textContent=time(l.current);$('previous').textContent=time(l.last);
+ $('compound').textContent=({16:'Macio',17:'Médio',18:'Duro',7:'Intermediário',8:'Chuva'})[st.compound]||(present(st.compound)?'Composto '+st.compound:'—');
+ $('tyreage').textContent='Idade do jogo: '+num(st.age)+' voltas';
+ tyres.forEach((_,i)=>{const wear=dm.wear?.[i],temp=c.inner?.[i];$('wear'+i).textContent=present(wear)?num(wear,1)+'%':'—';$('wearbar'+i).style.width=pct(wear)+'%';$('wearbar'+i).style.background=wear>=60?'var(--orange)':'var(--lime)';$('temp'+i).textContent=num(temp)+' °C';});
+ $('pitideal').textContent=d.race&&s.ideal?num(s.ideal):'—';$('pitlatest').textContent=d.race&&s.latest?num(s.latest):'—';
+ const alerts=d.alerts?.length?d.alerts:[{text:d.connected?'Nenhum alerta com os dados disponíveis.':'Aguardando os dados do carro.'}];
+ $('alerts').replaceChildren(...alerts.map(a=>{const el=document.createElement('li');el.textContent=a.text;el.className=a.level||'';return el;}));
+ $('updated').textContent='Atualizado às '+new Date().toLocaleTimeString('pt-BR');
+ $('dashlap').textContent=num(l.lap);$('soc').textContent=num(st.ers);$('gearchargefill').style.width=pct(st.ers)+'%';
+ let flag=st.fia_flag===2?'AZUL':st.fia_flag===3?'AMARELA':'VERDE',color=st.fia_flag===2?'#2099ff':st.fia_flag===3?'#ffff00':'#00ff61';if(s.safety_car===1||s.safety_car===2){flag=s.safety_car===1?'SC':'VSC';color='#ffff00';}if(d.race&&s.total>0&&l.lap>=s.total){flag='BRANCA · ÚLTIMA VOLTA';color='#ffffff';}$('trackflagpanel').style.setProperty('--flag-color',color);$('trackflagpanel').style.background=color;$('trackflagpanel').classList.toggle('flag-flash',flag!=='VERDE');$('trackflagpanel').setAttribute('aria-label','Bandeira '+flag);$('trackflagpanel').title=flag;$('trackflagtext').textContent=flag;$('trackflagtext').style.color=color;$('trackflagicon').style.background=color;
+ $('ersdot').className='activation-dot'+(st.ers_overtake?' active':'');$('ersdot').setAttribute('aria-label',st.ers_overtake?'ERS ultrapassagem acionado':'ERS ultrapassagem desativado');$('drsdot').className='activation-dot'+(c.drs?' active':st.drs_allowed?' available':'');$('drsdot').setAttribute('aria-label',c.drs?'DRS ativo':st.drs_allowed?'DRS disponível':'DRS indisponível');$('mix').textContent=num(st.fuel_mix);$('deploy').textContent=st.ers_deploying?'ON':'OFF';$('ersmarker').className='cell small ers-marker'+(st.ers_deploying?' active':'');$('fuelpercent').textContent=present(st.fuel_percent)?num(st.fuel_percent)+'%':'—';$('brakebias').textContent=num(st.brake_bias,1);
+ $('delta').textContent=present(l.delta_leader)?'+'+l.delta_leader.toFixed(3):'—';
+ ['te','td','de','dd'].forEach((tyre,i)=>{
+  $('dash'+tyre).textContent=present(dm.wear?.[i])?num(dm.wear[i])+'%':'—';
+  const mode=st.compound===7?'inter':[8,10,15].includes(st.compound)?'wet':[9,16,17,18,19,20,21,22].includes(st.compound)?'dry':null;
+  const band=mode?d.thermal?.[mode]:null,temp=c.inner?.[i],dot=$('heat'+tyre);
+  let state='unknown',description='Temperatura indisponível';
+  if(present(temp)&&band?.enabled){state=temp<band.low?'cold':temp>band.high?'hot':'ideal';description=temp+' °C · '+(state==='cold'?'frio':state==='hot'?'quente':'na faixa configurada')+' ('+band.low+'–'+band.high+' °C)';}
+  else if(band&&!band.enabled)description='Indicador de temperatura desativado';
+  dot.className='heat-dot '+state;dot.title=description;dot.setAttribute('aria-label',description);
+ });
+ $('pitlimiter').className='cell limit'+(st.limiter?' active':'');
+ const sc=s.safety_car;$('safetycell').className='cell flag'+(sc===1||sc===2?' active':'');
+ $('safetycell').textContent=sc===1?'SC':sc===3?'FORM':'VSC';
+ $('safetycell').setAttribute('aria-label',sc===1?'Safety car ativo':sc===2?'Virtual safety car ativo':'Sem safety car ativo');
+ if(present(s.time_left)){const seconds=s.time_left;$('sessionclock').textContent=String(Math.floor(seconds/3600)).padStart(2,'0')+':'+String(Math.floor(seconds%3600/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0');}else $('sessionclock').textContent='—';
+ updateSummary(d);
+ const radio=d.radio;
+ $('summaryspeak').disabled=!radio||!d.connected;
+ $('radiotest').disabled=!radio||!!radio.speaking;$('radiotoggle').disabled=!radio;
+ $('radiotoggle').textContent=radio?.enabled?'Pausar avisos':'Ativar avisos';$('radiotoggle').setAttribute('aria-pressed',String(!!radio?.enabled));
+ $('radiostatus').textContent=!radio?'Rádio desconectado':radio.error?'Confira a voz no Windows':radio.speaking?'Falando pelo PC…':radio.enabled?'Avisos ativados':'Avisos pausados';
+ $('radiostatus').className='radio-status'+(radio?.error?' radio-error':'');
+ $('radiolast').textContent=radio?.error||radio?.last_text||'Clique em Testar rádio para conferir seu fone.';
+}
+async function radioCommand(action){
+ const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),4000);
+ $('radiofeedback').textContent='Enviando comando ao PC…';
+ try{const r=await fetch('radio',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action}),signal:controller.signal});if(!r.ok)throw Error();const result=await r.json();$('radiofeedback').textContent=result.message;$('mainfeedback').textContent=result.message;}
+ catch(e){$('radiofeedback').textContent='Não foi possível enviar o comando. Confira a conexão com o PC.';$('mainfeedback').textContent=$('radiofeedback').textContent;}
+ finally{clearTimeout(timer);}
+}
+$('summaryspeak').addEventListener('click',()=>radioCommand('summary'));
+$('radiotest').addEventListener('click',()=>radioCommand('test'));
+$('radiotoggle').addEventListener('click',()=>radioCommand('toggle'));
+async function poll(){
+ const started=performance.now();
+ const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),3000);
+ try{const r=await fetch('api',{cache:'no-store',signal:ctrl.signal});if(!r.ok)throw Error(r.status);show(await r.json());}
+ catch(e){show({});document.body.classList.add('offline');$('connection').textContent='Sem conexão com o PC';$('notice').classList.remove('hidden');$('notice').textContent='Conexão interrompida. Confira o Wi-Fi e se o programa continua aberto no PC. Se o IP do PC mudou, confira o endereço no terminal.';$('updated').textContent='Tentando reconectar…';}
+ finally{clearTimeout(timer);setTimeout(poll,Math.max(20,100-(performance.now()-started)));}
+}
+let wakeWanted=false,wakeSentinel=null,wakePending=false;
+function wakeNote(text){$('wakenote').textContent=text;$('wakenote').classList.toggle('hidden',!text);}
+async function acquireWake(){
+ if(!wakeWanted||wakePending||wakeSentinel||document.visibilityState==='hidden')return;
+ if(!window.isSecureContext||!('wakeLock' in navigator)){
+  wakeWanted=false;$('keepawake').setAttribute('aria-pressed','false');
+  wakeNote('Neste acesso local, o navegador não permite manter a tela ligada automaticamente. Ajuste o tempo de bloqueio nas configurações do tablet durante a corrida.');return;
+ }
+ wakePending=true;
+ try{
+  const lock=await navigator.wakeLock.request('screen');
+  if(!wakeWanted){await lock.release();return;}
+  wakeSentinel=lock;$('keepawake').textContent='Tela ligada ✓';$('keepawake').setAttribute('aria-pressed','true');
+  wakeNote('Tela mantida ligada enquanto esta página estiver visível.');
+  lock.addEventListener('release',()=>{
+   if(wakeSentinel===lock)wakeSentinel=null;
+   $('keepawake').textContent='Manter tela ligada';$('keepawake').setAttribute('aria-pressed','false');
+   if(wakeWanted)wakeNote('Proteção de tela suspensa pelo tablet. Toque em Manter tela ligada para reativar.');
+  });
+ }catch(e){wakeNote('O tablet não autorizou manter a tela ligada. Confira o bloqueio automático e a economia de bateria nas configurações.');}
+ finally{wakePending=false;}
+}
+$('keepawake').addEventListener('click',async()=>{
+ if(wakeSentinel){wakeWanted=false;const lock=wakeSentinel;wakeSentinel=null;await lock.release();$('keepawake').textContent='Manter tela ligada';$('keepawake').setAttribute('aria-pressed','false');wakeNote('Proteção desativada. O bloqueio automático do tablet volta a valer.');}
+ else{wakeWanted=true;await acquireWake();}
+});
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&wakeWanted)acquireWake();});
+$('fullscreen').addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else if(document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen();else $('fullscreen').textContent='Use o menu do navegador';}catch(e){$('fullscreen').textContent='Use o menu do navegador';}});
+document.addEventListener('fullscreenchange',()=>{$('fullscreen').textContent=document.fullscreenElement?'Sair da tela cheia':'Tela cheia';});
+function fitDashboard(){const dash=$('dashboard');dash.style.setProperty('--u',dash.clientWidth/100+'px');}
+if(typeof ResizeObserver!=='undefined')new ResizeObserver(fitDashboard).observe($('dashboard'));
+window.addEventListener('resize',fitDashboard);fitDashboard();
+let connectLinks=[];
+function selectConnectLink(){
+ const index=Number($('connectnetwork').value),entry=connectLinks[index];
+ if(!entry)return;
+ $('connectqr').hidden=false;$('connectqr').src='qr.svg?index='+index;
+ $('connectlink').href=entry.url;$('connectlink').textContent=entry.url;
+ $('connectfeedback').textContent='Leia o código com a câmera e toque no endereço que aparecer. Você também pode salvar o link nos favoritos.';
+}
+async function openConnect(){
+ const dialog=$('connectdialog');if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');
+ $('connectfeedback').textContent='Carregando endereço da rede…';$('connectqr').hidden=true;
+ try{const response=await settingsFetch('connect',{cache:'no-store'});if(!response.ok)throw Error();const result=await response.json();connectLinks=result.links;
+  $('connectnetwork').replaceChildren(...connectLinks.map((entry,i)=>{const option=document.createElement('option');option.value=String(i);option.textContent=entry.ip;return option;}));
+  if(!connectLinks.length){$('connectfeedback').textContent='Não foi encontrado um endereço da rede. Conecte o PC ao Wi-Fi ou cabo de rede e reinicie o programa.';$('connectlink').textContent='';return;}
+  $('connectnetwork').value='0';selectConnectLink();
+ }catch(e){$('connectfeedback').textContent='Não foi possível preparar o QR Code. Confira se o programa continua aberto e tente novamente.';}
+}
+$('connectopen').addEventListener('click',openConnect);
+$('connectnetwork').addEventListener('change',selectConnectLink);
+$('connectclose').addEventListener('click',()=>{if($('connectdialog').close)$('connectdialog').close();else $('connectdialog').removeAttribute('open');});
+$('connectqr').addEventListener('error',()=>{$('connectfeedback').textContent='Não foi possível carregar o código. Use o endereço abaixo ou tente reabrir esta tela.';});
+if(typeof location!=='undefined'&&['127.0.0.1','localhost','[::1]'].includes(location.hostname))openConnect();
+
+poll();
+</script>
+</body></html>

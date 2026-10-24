@@ -1,0 +1,282 @@
+PitSignal · Painel de corrida	PitSignal · Race dashboard
+Conectando ao painel	Connecting to dashboard
+Conectar celular · QR	Connect mobile · QR
+Ouvir resumo	Speak summary
+Resumo	Summary
+Configurar avisos	Alert settings
+DEMONSTRAÇÃO · Dano aos 12 s, aumento aos 24 s e voltas aceleradas a cada 20 s.	DEMO · Damage at 12 s, increased damage at 24 s and accelerated laps every 20 s.
+Conectando ao PC…	Connecting to PC…
+VOLTA ATUAL	CURRENT LAP
+MELHOR DA CORRIDA	RACE BEST
+Δ LÍDER	Δ LEADER
+COMBUSTÍVEL %	FUEL %
+TE · DESG.	RL · WEAR
+TD · DESG.	RR · WEAR
+DE · DESG.	FL · WEAR
+DD · DESG.	FR · WEAR
+FREIO	BRAKE
+ACELERADOR	THROTTLE
+ERS EM USO	ERS DEPLOYING
+VERDE	GREEN
+AZUL	BLUE
+AMARELA	YELLOW
+BRANCA · ÚLTIMA VOLTA	WHITE · FINAL LAP
+Bandeira verde	Green flag
+BANDEIRA	FLAG
+Rádio, combustível e controles	Radio, fuel and controls
+Testar rádio no PC	Test radio on PC
+Pausar avisos	Pause alerts
+Ativar avisos	Enable alerts
+Tela cheia	Fullscreen
+Manter tela ligada	Keep screen awake
+Conectando ao rádio…	Connecting to radio…
+Clique em Testar rádio para conferir seu fone.	Click Test radio to check your headphones.
+O som sai pelo PC. Danos seguem os intervalos configurados. Ajuste o narrador e a frequência dos resumos em Configurar avisos.	Audio plays on the PC. Damage follows your configured intervals. Set narration and summary frequency in Alert settings.
+Combustível	Fuel
+Margem do MFD	MFD fuel margin
+voltas · previsão do jogo	laps · game estimate
+ERS armazenado	Stored ERS
+Posição	Position
+Voltas	Laps
+Volta anterior	Previous lap
+Boxes · ideal / limite do jogo	Pit stop · game ideal / latest
+Pedais	Pedals
+Idade dos pneus: —	Tyre age: —
+BBAL: balanço dos freios. ERS %: carga da bateria. MIX e ERS: modos do jogo. Quatro percentuais de desgaste; os círculos indicam a temperatura interna na faixa configurada. PIT LIMIT e VSC só são destacados quando ativos. Δ LÍDER: diferença para o líder em segundos. Relógio: tempo restante da sessão.	BBAL: brake balance. ERS %: battery charge. MIX and ERS: game modes. Four tyre wear percentages; dots show inner temperature against the configured range. PIT LIMIT and VSC highlight only when active. Δ LEADER: gap to leader in seconds. Clock: remaining session time.
+Protótipo por regras, sem cálculo próprio de estratégia. Use o tablet na horizontal para o visual da referência.	Rule-based prototype, without an independent strategy calculation. Use the tablet in landscape orientation.
+Abrir no celular ou tablet	Open on phone or tablet
+Aponte a câmera para o QR Code.	Point your camera at the QR code.
+Fechar	Close
+Conecte o celular/tablet ao mesmo Wi-Fi ou à mesma rede do PC. Mantenha o programa aberto no computador.	Connect your phone/tablet to the same Wi-Fi or local network as the PC. Keep the program running on the computer.
+Endereço do PC na rede	PC network address
+Carregando…	Loading…
+Se houver vários endereços e um deles não abrir, escolha outro acima. Caso o Windows pergunte, permita o Python em redes privadas.	If one address does not work, select another above. If Windows asks, allow Python on private networks.
+Situação do carro e da corrida	Car and race status
+PILOTO À FRENTE	CAR AHEAD
+PILOTO ATRÁS	CAR BEHIND
+Intervalos em segundos para os pilotos imediatamente à frente e atrás na classificação. Campos sem dados recentes são ocultados.	Gaps in seconds to the cars immediately ahead and behind in race order. Fields without recent data are hidden.
+Sua posição	Your position
+Volta / total	Lap / total
+Combustível no tanque	Fuel in tank
+Margem de combustível do jogo	Game fuel margin
+Maior desgaste de pneu	Highest tyre wear
+Energia ERS	ERS energy
+Parada prevista pelo jogo	Game planned pit stop
+Danos e falhas	Damage and faults
+Configuração de avisos	Alert settings
+Escolha o que o narrador fala e com qual frequência.	Choose what the narrator says and how often.
+Dano e desgaste são separados. Os controles usam marcos percentuais: com 10, avisa ao atingir 10%, 20%, 30%… Não repete a cada 1%. Falhas de DRS/ERS são liga/desliga. As cores dos pneus usam temperatura interna: azul = frio, verde = faixa configurada, vermelho = quente. Ajuste os limites por composto abaixo; são referências, não um limite universal de desempenho ideal.	Damage and wear are separate. Sliders use percentage milestones: 10 means alerts at 10%, 20%, 30%… It does not repeat at every 1%. DRS/ERS faults use on/off switches. Tyre dots use inner temperature: blue = cold, green = configured range, red = hot. Adjust ranges by compound below; these are references, not universal performance limits.
+Em Narrador, ative as falas e escolha resumos a cada 1 a 20 voltas. Exemplo: a cada 2 voltas, anuncia ao concluir as voltas 2, 4, 6… O resumo final também é anunciado.	Under Narrator, enable speech and select summaries every 1 to 20 laps. Every 2 laps means after laps 2, 4, 6… A final summary is also announced.
+Restaurar padrão	Restore defaults
+Salvar configurações	Save settings
+Demonstração · dados simulados	Demo · simulated data
+Atualização ao vivo	Live update
+Sem telemetria recente	No recent telemetry
+Você está na liderança	You are leading
+Sem piloto ou intervalo disponível	No car or gap available
+Falha: 	Fault: 
+Nenhum dano ou falha informado.	No damage or faults reported.
+Aguardando dados de danos.	Waiting for damage data.
+A cada 	Every 
+ ponto percentual	 percentage point
+ pontos percentuais	 percentage points
+Alterações ainda não salvas.	Unsaved changes.
+Intervalo dos resumos em voltas	Summary interval in laps
+Intervalo percentual: 	Percentage interval: 
+Anunciar a cada 	Announce every 
+Abaixo deste valor: frio	Below this value: cold
+Acima deste valor: quente	Above this value: hot
+Carregando configurações do PC…	Loading PC settings…
+Configurações salvas no PC. Ajuste e toque em Salvar.	Settings saved on the PC. Adjust and tap Save.
+Não foi possível carregar. Confira a conexão e reabra esta tela.	Could not load settings. Check the connection and reopen this screen.
+Padrões carregados: intervalos de 10 pontos e resumo a cada volta. Toque em Salvar.	Defaults loaded: 10-point intervals and a summary every lap. Tap Save.
+: o limite frio deve ser menor que o limite quente.	: the cold limit must be lower than the hot limit.
+Salvando no PC…	Saving on PC…
+Não foi possível salvar. Confira a conexão e tente novamente.	Could not save. Check the connection and try again.
+Traseiro esquerdo	Rear left
+Traseiro direito	Rear right
+Dianteiro esquerdo	Front left
+Dianteiro direito	Front right
+Demonstração ativa	Demo running
+Telemetria ao vivo	Live telemetry
+Aguardando jogo	Waiting for game
+Painel conectado ao PC. Entre na pista e confira a telemetria UDP do F1 24.	Dashboard connected to PC. Enter the track and check F1 24 UDP telemetry.
+Nos boxes	In the pits
+Na pista · 	On track · 
+simulação	simulation
+dados do jogo	game data
+Aguardando telemetria	Waiting for telemetry
+Sem atualização	No update
+RPM indisponível	RPM unavailable
+Macio	Soft
+Médio	Medium
+Duro	Hard
+Intermediário	Intermediate
+Chuva	Wet
+Composto 	Compound 
+Idade do jogo: 	Game tyre age: 
+Nenhum alerta com os dados disponíveis.	No alerts from available data.
+Aguardando os dados do carro.	Waiting for car data.
+Atualizado às 	Updated at 
+Bandeira 	Flag 
+ERS ultrapassagem acionado	ERS overtake enabled
+ERS ultrapassagem desativado	ERS overtake disabled
+DRS ativo	DRS active
+DRS disponível	DRS available
+DRS indisponível	DRS unavailable
+ERS inativo	ERS inactive
+DRS inativo	DRS inactive
+Temperatura indisponível	Temperature unavailable
+na faixa configurada	within configured range
+frio	cold
+quente	hot
+Indicador de temperatura desativado	Temperature indicator disabled
+Safety car ativo	Safety car active
+Virtual safety car ativo	Virtual safety car active
+Sem safety car ativo	No active safety car
+Rádio desconectado	Radio disconnected
+Confira a voz no Windows	Check Windows speech voices
+Falando pelo PC…	Speaking on PC…
+Avisos ativados	Alerts enabled
+Avisos pausados	Alerts paused
+Enviando comando ao PC…	Sending command to PC…
+Não foi possível enviar o comando. Confira a conexão com o PC.	Could not send command. Check the PC connection.
+Sem conexão com o PC	Disconnected from PC
+Conexão interrompida. Confira o Wi-Fi e se o programa continua aberto no PC. Se o IP do PC mudou, confira o endereço no terminal.	Connection lost. Check Wi-Fi and keep the program running on the PC. If its IP changed, check the terminal address.
+Tentando reconectar…	Reconnecting…
+Neste acesso local, o navegador não permite manter a tela ligada automaticamente. Ajuste o tempo de bloqueio nas configurações do tablet durante a corrida.	This local connection cannot automatically keep the screen awake. Adjust the tablet screen timeout during the race.
+Tela ligada ✓	Screen awake ✓
+Tela mantida ligada enquanto esta página estiver visível.	Screen stays awake while this page is visible.
+Proteção de tela suspensa pelo tablet. Toque em Manter tela ligada para reativar.	Screen wake lock was suspended. Tap Keep screen awake to reactivate.
+O tablet não autorizou manter a tela ligada. Confira o bloqueio automático e a economia de bateria nas configurações.	The tablet did not allow screen wake lock. Check auto-lock and battery saving settings.
+Proteção desativada. O bloqueio automático do tablet volta a valer.	Wake lock disabled. The tablet auto-lock settings apply again.
+Use o menu do navegador	Use the browser menu
+Sair da tela cheia	Exit fullscreen
+Leia o código com a câmera e toque no endereço que aparecer. Você também pode salvar o link nos favoritos.	Scan with your camera and tap the link. You can also bookmark the address.
+Carregando endereço da rede…	Loading network address…
+Não foi encontrado um endereço da rede. Conecte o PC ao Wi-Fi ou cabo de rede e reinicie o programa.	No network address found. Connect the PC to Wi-Fi or Ethernet and restart the program.
+Não foi possível preparar o QR Code. Confira se o programa continua aberto e tente novamente.	Could not prepare QR code. Check that the program is running and try again.
+Não foi possível carregar o código. Use o endereço abaixo ou tente reabrir esta tela.	Could not load QR code. Use the address below or reopen this screen.
+Ativar narrador e falas automáticas	Enable narrator and automatic speech
+Radio check antes da largada	Pre-race radio check
+Resumos de corrida	Race summaries
+Combustível insuficiente	Insufficient fuel
+Janela de parada do jogo	Game pit window
+Tempo de volta	Lap time
+Conteúdo do resumo	Summary contents
+Desgaste dos pneus	Tyre wear
+Intervalos para frente e para trás	Gaps ahead and behind
+Desgaste: 	Wear: 
+Danos do carro	Car damage
+Falhas	Faults
+Narrador	Narrator
+Gerais	General
+Pneus secos	Dry tyres
+Intermediários	Intermediates
+Cores de temperatura · faixas de referência	Temperature colours · reference ranges
+pneu traseiro esquerdo	rear left tyre
+pneu traseiro direito	rear right tyre
+pneu dianteiro esquerdo	front left tyre
+pneu dianteiro direito	front right tyre
+freio traseiro esquerdo	rear left brake
+freio traseiro direito	rear right brake
+freio dianteiro esquerdo	front left brake
+freio dianteiro direito	front right brake
+asa dianteira esquerda	front left wing
+asa dianteira direita	front right wing
+asa traseira	rear wing
+assoalho	floor
+difusor	diffuser
+lateral	sidepod
+câmbio	gearbox
+motor estourado	blown engine
+motor travado	seized engine
+motor	engine
+Carro à frente	Car ahead
+Carro atrás	Car behind
+À frente	Ahead
+Atrás	Behind
+Resumo solicitado.	Summary requested.
+Última volta, 	Previous lap, 
+Volta 	Lap 
+ concluída.	 completed.
+Tempo, 	Time, 
+ minuto	 minute
+ minutos	 minutes
+ segundos	 seconds
+Posição 	Position 
+Combustível, déficit de 	Fuel shortfall: 
+Combustível, margem de 	Fuel margin: 
+ volta	 lap
+ voltas	 laps
+. Economize.	. Save fuel.
+Combustível no limite pela previsão do jogo.	Fuel is marginal according to the game estimate.
+Pneu mais gasto, 	Highest tyre wear, 
+Maior desgaste, 	Highest wear, 
+Maior dano, 	Highest damage, 
+ por cento	 percent
+Você está nos boxes.	You are in the pits.
+Corrida concluída.	Race completed.
+Esta é a volta de parada prevista pelo jogo.	This is the pit lap planned by the game.
+Parada prevista pelo jogo, volta 	Game planned pit stop, lap 
+Radio check. PitSignal funcionando. Vou acompanhar sua corrida. Boa largada.	Radio check. PitSignal is working. I will follow your race. Good luck at the start.
+Demonstração. 	Demo. 
+Dano detectado. 	Damage detected. 
+falha em 	fault in 
+Pelo plano do jogo, a parada está prevista para a próxima volta, volta 	The game plans your pit stop for the next lap, lap 
+Você chegou à volta de parada prevista pelo jogo. Confira pneus e tráfego antes de entrar.	You have reached the pit lap planned by the game. Check tyres and traffic before entering.
+Você chegou à volta limite de parada indicada pelo plano do jogo. Confira sua estratégia.	You have reached the latest pit lap in the game plan. Check your strategy.
+A previsão do jogo indica combustível insuficiente para terminar. Considere economizar.	The game predicts insufficient fuel to finish. Consider saving fuel.
+Desgaste dos pneus. 	Tyre wear. 
+Rádio conferido. Seu engenheiro está pronto. Os avisos seguem as configurações escolhidas no tablet.	Radio checked. Your engineer is ready. Alerts follow the settings selected on the tablet.
+Resumo solicitado. O áudio sai pelo PC.	Summary requested. Audio plays on the PC.
+Sem telemetria recente. Entre na pista para ouvir o resumo.	No recent telemetry. Enter the track to hear a summary.
+O resumo já foi solicitado. Aguarde o rádio.	Summary already requested. Please wait for the radio.
+Aguarde o rádio terminar antes de testar novamente.	Wait for the radio to finish before testing again.
+Teste solicitado. O áudio sai pelo PC.	Test requested. Audio plays on the PC.
+Configuração do rádio atualizada.	Radio settings updated.
+Configurações salvas no PC e aplicadas ao narrador.	Settings saved on the PC and applied to the narrator.
+A voz pelo PC requer Windows. O painel continua funcionando.	PC speech requires Windows. The dashboard still works.
+Não foi possível iniciar a voz. Confira o áudio e as vozes instaladas no Windows.	Could not start speech. Check audio and installed Windows voices.
+Falha na voz do Windows.	Windows speech failed.
+A voz demorou demais. Confira o áudio do Windows e teste novamente.	Speech timed out. Check Windows audio and test again.
+Não foi possível ler os avisos salvos. Padrões de 10 pontos carregados; salve novamente para reparar.	Could not read saved alerts. Defaults with 10-point intervals loaded; save again to repair.
+Configuração incompleta. Reabra a tela de avisos.	Incomplete settings. Reopen Alert settings.
+Configuração de aviso inválida.	Invalid alert settings.
+O limite frio deve ser menor que o limite quente, entre 1 e 150 graus.	The cold limit must be lower than the hot limit, between 1 and 150 degrees.
+Intervalo de aviso inválido.	Invalid alert interval.
+ e 	 and 
+ de 	 of 
+ pelo jogo.	 according to the game.
+Comando de rádio inválido.	Invalid radio command.
+LAP	LAP
+pt-BR	en-US
+Não foi possível alterar o idioma. Confira a conexão.	Could not change language. Check the connection.
+QR Code para abrir o dashboard no celular	QR code to open the dashboard on your phone
+Carga do ERS	ERS charge
+Ativar rádio automático	Enable automatic radio
+Resumo a cada volta	Summary every lap
+Comando de rádio inválido.	Invalid radio command.
+Nenhuma voz em portugues compativel foi encontrada. Adicione uma voz em Portugues nas configuracoes de Fala do Windows e teste novamente.	No compatible Portuguese voice was found. Add a Portuguese voice in Windows Speech settings and test again.
+traseiro esquerdo	rear left
+traseiro direito	rear right
+dianteiro esquerdo	front left
+dianteiro direito	front right
+Valor	Value
+PitSignal - PAINEL NO NAVEGADOR	PitSignal - WEB DASHBOARD
+MODO: 	MODE: 
+DEMONSTRACAO (dados ficticios)	DEMO (simulated data)
+TELEMETRIA REAL DO F1 24	LIVE F1 24 TELEMETRY
+NO PC: 	ON PC: 
+NO CELULAR/TABLET (mesmo Wi-Fi/rede):	ON PHONE/TABLET (same Wi-Fi/network):
+Use o IPv4 do PC no lugar de 127.0.0.1 no link acima (ipconfig).	Use the PC IPv4 address instead of 127.0.0.1 in the link above (ipconfig).
+Se o Firewall do Windows perguntar, permita Python apenas em redes privadas.	If Windows Firewall asks, allow Python on private networks only.
+Codigo de acesso salvo: o mesmo link vale para demonstracao e jogo real.	Access code saved: the same link works in demo and live mode.
+Salve o link no tablet. Se o IP do PC mudar, atualize o endereco.	Bookmark the link on the tablet. Update the address if the PC IP changes.
+Mantenha esta janela aberta. Ctrl+C encerra.	Keep this window open. Ctrl+C stops the program.
+RADIO: o audio sai pelo PC. Use Testar radio no painel para conferir o fone.	RADIO: audio plays on PC. Use Test radio in the dashboard to check your headphones.
+Painel encerrado.	Dashboard stopped.
+Nao foi possivel iniciar: 	Could not start: 
+Confira se outro PitSignal ou aplicativo ocupa as portas 20777/8765.	Check whether another PitSignal instance or app is using ports 20777/8765.
+
+Desenvolvido por Kintounn	Developed by Kintounn

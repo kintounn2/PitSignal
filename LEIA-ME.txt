@@ -1,0 +1,27 @@
+PITSIGNAL - Desenvolvido por Kintounn
+Codigo aberto sob licenca MIT. Leia LICENSE.
+
+COMO USAR NO WINDOWS
+1. Extraia todos os arquivos e a pasta assets juntos.
+2. Abra INICIAR.bat. DEMONSTRACAO.bat usa dados ficticios.
+3. Escolha Portugues ou English no painel.
+4. Leia o QR Code com celular/tablet na mesma rede do PC.
+5. F1 24: UDP ligado, broadcast desligado, IP 127.0.0.1,
+   porta 20777, formato 2024, frequencia 20 Hz.
+Mantenha o programa aberto. Ctrl+C encerra.
+
+Testado com F1 24 (F1 2024). Compatibilidade com outras edicoes nao verificada.
+Usa o formato de telemetria 2024. Coach e outros jogos estao planejados.
+As configuracoes ficam em %LOCALAPPDATA%\PitSignal.
+Dados da versao anterior sao importados automaticamente quando necessario,
+sem substituir preferencias existentes. O codigo de acesso e preservado.
+
+Guia completo: README.pt-BR.md
+Publicar no GitHub: PUBLICAR_GITHUB.md
+
+ENGLISH
+Developed by Kintounn. Open source under the MIT License.
+Read README.md. Run START.bat or DEMO.bat on Windows.
+Keep all files and the assets folder together.
+Tested with F1 24 (F1 2024). Compatibility with other editions is unverified.
+Uses the 2024 telemetry format. Coaching and other games are planned.
