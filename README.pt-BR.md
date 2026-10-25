@@ -10,6 +10,30 @@ Desenvolvido por **Kintounn**.
 
 Dashboard de telemetria de corrida com rádio pelo Windows e acesso pelo navegador do PC, celular ou tablet. **Testado com F1 24 (F1 2024).** A compatibilidade com outras edições ainda não foi verificada; a implementação atual usa o formato de telemetria 2024. O coach e integrações com outros jogos estão planejados e ainda não foram implementados.
 
+## Apoie o projeto
+
+[![Apoie o PitSignal](assets/support-pt.svg)](https://ko-fi.com/kintounn)
+
+Gostou do PitSignal? Você pode apoiar o desenvolvimento pelo Ko-fi. A contribuição é voluntária; o programa continua gratuito e de código aberto.
+
+## Screenshots
+
+Capturas reais do programa em **modo demonstração**, com dados fictícios.
+
+### Dashboard
+
+![Dashboard do PitSignal em português](docs/screenshots/dashboard-pt.png)
+
+### Conectar celular ou tablet por QR Code
+
+![Janela de conexão por QR Code](docs/screenshots/qrcode-pt.png)
+
+O endereço e o QR Code acima são exemplos para documentação. No seu PC, o programa gera o código de conexão da sua própria rede.
+
+### Configuração de avisos
+
+![Configurações do narrador e avisos](docs/screenshots/settings-pt.png)
+
 ## Como usar
 
 1. Instale Python 3.9 ou superior e extraia todos os arquivos juntos.

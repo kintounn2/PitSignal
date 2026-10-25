@@ -36,3 +36,11 @@ People downloading the project should extract it and run `START.bat` on Windows.
 
 - [Upload files / Enviar arquivos](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository)
 - [Add a license / Adicionar licença](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository)
+
+## Botão de apoio / Sponsor button
+
+A página de apoio é https://ko-fi.com/kintounn. Os botões no painel e nos READMEs abrem esse endereço. O programa não processa pagamentos.
+
+Envie também a pasta `.github`, que contém `FUNDING.yml`. No GitHub, em **Settings > General > Features**, habilite **Sponsorships** se necessário. O arquivo usa `ko_fi: kintounn` para o botão de apoio do repositório.
+
+The support page is https://ko-fi.com/kintounn. Dashboard and README buttons open this address. The application does not process payments. Upload `.github/FUNDING.yml` as well and enable **Settings > General > Features > Sponsorships** if needed.

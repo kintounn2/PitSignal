@@ -10,6 +10,30 @@ Developed by **Kintounn**.
 
 A racing telemetry dashboard with Windows race radio. **Tested with F1 24 (F1 2024).** Compatibility with other editions has not been verified; the current implementation uses the 2024 telemetry format. Integrations with other games and a coaching system are planned; they are not implemented yet. Open the dashboard on your PC or scan the local QR code to use a phone/tablet on the same network.
 
+## Support the project
+
+[![Support PitSignal](assets/support-en.svg)](https://ko-fi.com/kintounn)
+
+Enjoying PitSignal? You can support its development on Ko-fi. Contributions are optional; the application remains free and open source.
+
+## Screenshots
+
+Actual application captures in **demo mode**, using simulated data.
+
+### Dashboard
+
+![PitSignal dashboard in English](docs/screenshots/dashboard-en.png)
+
+### Connect a phone or tablet using a QR code
+
+![QR connection dialog, shown in Portuguese](docs/screenshots/qrcode-pt.png)
+
+The address and QR code above are documentation examples. When you run the program, it generates a connection code for your own PC and network.
+
+### Alert settings
+
+![Narrator and alert settings, shown in Portuguese](docs/screenshots/settings-pt.png)
+
 ## Start on Windows
 
 1. Install Python 3.9 or newer.
