@@ -58,9 +58,9 @@ Inclui marcha, velocidade, combustível, ERS, DRS, pneus, bandeiras, melhor volt
 
 É um protótipo por regras. Estratégia de boxes e margem de combustível vêm do jogo. Faixas de temperatura são referências ajustáveis. A melhor volta depende dos históricos válidos dos pilotos. Dados indisponíveis não são inventados.
 
-A voz requer Windows. PC e tablet devem estar na mesma rede; permita Python em redes privadas se solicitado. Se o IP do PC mudar, reinicie para atualizar o QR Code. O navegador pode impedir manter a tela ligada no HTTP local; ajuste o tempo de bloqueio do tablet quando necessário.
+A voz requer Windows. PC e do dispositivo movel devem estar na mesma rede; permita Python em redes privadas se solicitado. Se o IP do PC mudar, reinicie para atualizar o QR Code. O navegador pode impedir manter a tela ligada no HTTP local; ajuste o tempo de bloqueio do tablet quando necessário.
 
-As configurações são criadas em `%LOCALAPPDATA%\PitSignal`, fora do pacote. Preferências e código de acesso da versão anterior Coach F1 são importados automaticamente no primeiro uso, sem substituir configurações já existentes do PitSignal. Não inclui integração com telinha USB.
+As configurações são criadas em `%LOCALAPPDATA%\PitSignal`, fora do pacote.
 
 ## Traduções
 
